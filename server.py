@@ -5,22 +5,23 @@ import random
 app = Flask(__name__)
 
 # Path for our main Svelte page
-@app.route("/")
+@app.route("/", methods=['GET'])
 def base():
-    return send_from_directory('client/public', 'index.html')
+    # return send_from_directory('client/public', 'index.html')
+    return str(run_simulation())
 
 # Path for all the static files (compiled JS/CSS, etc.)
-@app.route("/<path:path>")
+@app.route("/<path:path>", methods=['GET'])
 def home(path):
     return send_from_directory('client/public', path)
 
 
-@app.route("/rand")
+@app.route("/rand", methods=['GET'])
 def hello():
     return str(random.randint(0, 100))
 
 
-@app.route("/diabetes")
+@app.route("/diabetes", methods=['GET'])
 def diabetes_sim():
     return str(run_simulation())
 
