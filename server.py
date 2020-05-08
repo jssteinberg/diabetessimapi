@@ -1,4 +1,4 @@
-from flask import Flask, send_from_directory
+from flask import Flask, send_from_directory, jsonify
 from hovorka_simulator import run_simulation
 import random
 
@@ -23,7 +23,7 @@ def hello():
 
 @app.route("/diabetes", methods=['GET'])
 def diabetes_sim():
-    return str(run_simulation())
+    return jsonify(run_simulation())
 
 
 if __name__ == "__main__":
