@@ -1,5 +1,5 @@
 {
-  "name": "Diabets-sim API",
+  "name": "Diabetes-sim API",
   "description": "A diabetes simulation API.",
   "image": "heroku/python",
   "repository": "https://github.com/jssteinberg/diabetessimapi",
