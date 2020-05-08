@@ -1,8 +1,10 @@
 from flask import Flask, send_from_directory, jsonify
+from flask_cors import CORS
 from hovorka_simulator import run_simulation
 import random
 
 app = Flask(__name__)
+CORS(app)
 
 # Path for our main Svelte page
 @app.route("/", methods=['GET'])
