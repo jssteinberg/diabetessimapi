@@ -1,0 +1,15 @@
+{
+  "name": "Diabets-sim API",
+  "description": "A diabetes simulation API.",
+  "image": "heroku/python",
+  "repository": "https://github.com/jssteinberg/diabetessimapi",
+  "keywords": ["python", "flask", "numpy", "scipy" ],
+  "environments": {
+    "test": {
+      "scripts": {
+        "test-setup": "python server.py collectstatic --noinput",
+        "test": "python server.py test"
+      }
+    }
+  }
+}
