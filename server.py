@@ -10,7 +10,7 @@ CORS(app)
 @app.route("/", methods=['GET'])
 def base():
     # return send_from_directory('client/public', 'index.html')
-    return str(run_simulation())
+    return jsonify(run_simulation())
 
 # Path for all the static files (compiled JS/CSS, etc.)
 @app.route("/<path:path>", methods=['GET'])
