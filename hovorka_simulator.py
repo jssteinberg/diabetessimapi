@@ -172,10 +172,11 @@ def hovorka_model_tuple(x, *pars):
     return xdot
 
 
-def run_simulation():
+def run_simulation(m1=40, m2=80, m3=60, m4=30):
     
     # Setting up meals (should be improved)
-    meals = np.array([40, 80, 60, 30])
+    # meals = np.array([40, 80, 60, 30])
+    meals = np.array([m1, m2, m3, m4])
     meal_times = np.array([8*60, 12*60, 18*60, 22*60]) 
     meal_vector = np.zeros(1440)
 
