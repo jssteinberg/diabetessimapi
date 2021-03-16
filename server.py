@@ -33,12 +33,22 @@ def query_example():
 
 @app.route("/diabetes", methods=['GET'])
 def diabetes_sim():
+
     meal_1 = request.args.get('m1') #if key doesn't exist, returns None
     meal_2 = request.args.get('m2') #if key doesn't exist, returns None
     meal_3 = request.args.get('m3') #if key doesn't exist, returns None
     meal_4 = request.args.get('m4') #if key doesn't exist, returns None
 
-    return jsonify(run_simulation(meal_1, meal_2, meal_3, meal_4))
+    if meal_1 is None:
+        meal_1 = 30
+    if meal_2 is None:
+        meal_2 = 30
+    if meal_3 is None:
+        meal_3 = 30
+    if meal_4 is None:
+        meal_4 = 30
+
+    return jsonify(run_simulation(int(meal_1), int(meal_2), int(meal_3), int(meal_4)))
 
 
 if __name__ == "__main__":
